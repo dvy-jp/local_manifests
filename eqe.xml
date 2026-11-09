@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <!--
+      ValkyOS for the Motorola Edge 50 Pro (eqe).
+      Local manifest: goes in .repo/local_manifests/ on top of the ValkyOS
+      manifest (https://github.com/ValkyOS/android, branch 17).
+      Device tree, kernel, vendor blobs and the device-only extras.
+    -->
+
+    <remote name="dvy-jp"
+            fetch="https://github.com/dvy-jp/" />
+
+    <!-- Device integration validated with Android 17. -->
+    <project path="device/motorola/eqe"
+             name="android_device_motorola_eqe"
+             remote="dvy-jp"
+             revision="996c18fb786ac2b0e42f3332d05a93f8cc2c6c16" />
+
+    <!--
+      Qualcomm sm8550 vendor sepolicy for eqe: LineageOS 3246964e plus the
+      Moto Camera xDSP exception (portrait). Only the sm8550 path is replaced;
+      the other sepolicy_vndr paths keep coming from LineageOS.
+    -->
+    <remove-project name="LineageOS/android_device_qcom_sepolicy_vndr"
+                    path="device/qcom/sepolicy_vndr/sm8550" />
+    <project path="device/qcom/sepolicy_vndr/sm8550"
+             name="android_device_qcom_sepolicy_vndr"
+             remote="dvy-jp"
+             groups="qcom,kailua-vendor"
+             revision="cb6013c8aa1038e5233c38020c7385a0af317702" />
+
+    <project path="device/qcom/wfd"
+             name="android_device_qcom_wfd"
+             remote="dvy-jp"
+             revision="b67d79b02555919f26869c46dd7c0117f15a9fa9" />
+
+    <project path="hardware/motorola"
+             name="android_hardware_motorola"
+             remote="dvy-jp"
+             revision="dd13713f8a5acc9efabbc15821ebaf0b605d2d7b" />
+
+    <!-- Android 17 vendor sources (a17-ready-v4). -->
+    <project path="vendor/motorola/eqe"
+             name="proprietary_vendor_motorola_eqe_a17"
+             remote="dvy-jp"
+             revision="3329889f0ab6cb24e5ec7657313e398278a52442" />
+
+    <project path="vendor/qcom/wfd"
+             name="proprietary_vendor_qcom_wfd_a17"
+             remote="dvy-jp"
+             revision="2a24489bd2f15d7bb0ae99ecf30c9c408bc9537f" />
+
+    <!-- Android 17 kernel and external modules (a17-ready-v4). -->
+    <project path="kernel/motorola/sm7550"
+             name="android_kernel_motorola_sm7550_a17"
+             remote="dvy-jp"
+             revision="f70f8546ac4aa0dcd047e17d276989e53dbc9841" />
+
+    <project path="kernel/motorola/sm7550-modules"
+             name="android_kernel_motorola_sm7550-modules_a17"
+             remote="dvy-jp"
+             revision="252f384314a467f70810a2aee2337ec27da55c1f" />
+
+    <project path="kernel/motorola/sm7550-devicetrees"
+             name="android_kernel_motorola_sm7550-devicetrees"
+             remote="dvy-jp"
+             revision="64a2cfc58476a597d7573f83b6fad4dc06cf3a3e" />
+
+    <!-- Required by the current eqe device tree. -->
+    <remote name="openeuicc"
+            fetch="https://github.com/estkme-group/" />
+
+    <project path="packages/apps/OpenEUICC"
+             name="openeuicc"
+             remote="openeuicc"
+             revision="49e498d4cb331d285e084cc3ab0629ae74ff86fc"
+             clone-depth="1"
+             sync-s="true" />
+</manifest>
