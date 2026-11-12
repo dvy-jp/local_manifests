@@ -14,7 +14,7 @@
     <project path="device/motorola/eqe"
              name="android_device_motorola_eqe"
              remote="dvy-jp"
-             revision="996c18fb786ac2b0e42f3332d05a93f8cc2c6c16" />
+             revision="f8bfd115ed7147ecd3c9b54fdc3bc4cb50029884" />
 
     <!--
       Qualcomm sm8550 vendor sepolicy for eqe: LineageOS 3246964e plus the
