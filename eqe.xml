@@ -14,7 +14,7 @@
     <project path="device/motorola/eqe"
              name="android_device_motorola_eqe"
              remote="dvy-jp"
-             revision="0145d1f46c4a7dd96673bf0dc92d6613fadfac4e" />
+             revision="49ee905b5b0fa2d780140185a3c74e92a1900a1d" />
 
     <!--
       Qualcomm sm8550 vendor sepolicy for eqe: LineageOS 3246964e plus the
@@ -43,7 +43,7 @@
     <project path="vendor/motorola/eqe"
              name="proprietary_vendor_motorola_eqe_a17"
              remote="dvy-jp"
-             revision="3329889f0ab6cb24e5ec7657313e398278a52442" />
+             revision="304452a782c188d4eda7c07faedc324b52a2a053" />
 
     <project path="vendor/qcom/wfd"
              name="proprietary_vendor_qcom_wfd_a17"
